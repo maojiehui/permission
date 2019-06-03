@@ -6,5 +6,6 @@ package com.qf.dto;
 public class TestDto {
     public static void main(String[] args) {
         System.out.println("hello world");
+        System.out.println("爱生活 爱自己");
     }
 }
