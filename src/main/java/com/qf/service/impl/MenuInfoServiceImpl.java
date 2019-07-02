@@ -2,6 +2,7 @@ package com.qf.service.impl;
 
 import com.qf.dto.MenuInfoDto;
 import com.qf.mapper.MenuInfoMapper;
+import com.qf.pojo.MenuInfo;
 import com.qf.service.MenuInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,9 @@ public class MenuInfoServiceImpl implements MenuInfoService{
 
     public List<MenuInfoDto> listMenuByUserId(int userId) {
         return menuInfoMapper.listMenuByUserId(userId);
+    }
+
+    public List<MenuInfo> listAllMenu(MenuInfo menuInfo) {
+        return menuInfoMapper.listAllMenu(menuInfo);
     }
 }

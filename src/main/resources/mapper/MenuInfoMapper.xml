@@ -20,6 +20,19 @@
     </resultMap>
 
 
+    <select id="listAllMenu" resultType="com.qf.pojo.MenuInfo" parameterType="com.qf.pojo.MenuInfo">
+        SELECT * from menuinfo
+        <where>
+            <if test="menuName != null and menuName !=''">
+                and menuName = #{menuName}
+            </if>
+            <if test="parentId != null and parentId !=''">
+                and parentId = #{parentId}
+            </if>
+        </where>
+    </select>
+
+
     <select id="listMenu" resultMap="menuInfoMap" parameterType="int">
         select tb1.*,isnull(r.MENUID) checked from(select m1.*,m2.MENUICON c_icon,m2.MENUID c_id,m2.MENUNAME c_name,m2.MENU_URL c_url,m2.PARENTID c_pid
          from menuinfo m1,menuinfo m2 where m1.MENUID = m2.PARENTID) tb1 left JOIN
